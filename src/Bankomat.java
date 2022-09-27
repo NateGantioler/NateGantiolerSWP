@@ -42,7 +42,6 @@ public class Bankomat
             }
         }while(stop == false);
 
-
         //Ende
         scanner.close();
     }
