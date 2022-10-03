@@ -5,18 +5,23 @@ public class ObjektOrientiertTest
         Car c1 = new Car();
         c1.brand = "Audi";
         c1.fuelAmount = 30;
+        c1.maxFuelAmount = 120;
         c1.fuelConsumption = 5;
         c1.serialNumber = "1234";
 
-        Car c2 = new Car();
-        c2.brand = "Mercedes";
-        c2.fuelAmount = 25;
-        c2.fuelConsumption = 4;
-        c2.serialNumber = "5678";
-
-        //Fahren
-        System.out.println(c1.fuelAmount);
+        //Drive
         c1.drive();
-        System.out.println(c1.fuelAmount);
+
+        //Break
+        c1.Break();
+
+        //Turbo
+        c1.turboBoost();
+
+        //Honk
+        c1.honk(5);
+
+        //Remaining Range
+        c1.getRemainingRange();
     }
 }
