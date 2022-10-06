@@ -2,26 +2,23 @@ public class ObjektOrientiertTest
 {
     public static void main(String[] args)
     {
-        Car c1 = new Car();
-        c1.brand = "Audi";
-        c1.fuelAmount = 30;
-        c1.maxFuelAmount = 120;
-        c1.fuelConsumption = 5;
-        c1.serialNumber = "1234";
+        Car c1 = new Car(5, 30, 120, "Audi", "1234", "Black");
 
-        //Drive
+        System.out.println(c1.getBrand());
+        System.out.println(c1.getColor());
+        System.out.println(c1.getSerialNumber());
+        System.out.println(c1.getFuelAmount());
+        System.out.println(c1.getMaxFuelAmount());
+        System.out.println(c1.getFuelConsumption());
+
+
+        //
+        // Car Funktions
+        //
         c1.drive();
-
-        //Break
         c1.Break();
-
-        //Turbo
         c1.turboBoost();
-
-        //Honk
         c1.honk(5);
-
-        //Remaining Range
         c1.getRemainingRange();
     }
 }

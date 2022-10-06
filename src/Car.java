@@ -1,11 +1,25 @@
 public class Car
 {
-    public int fuelConsumption;
-    public float fuelAmount;
-    public float maxFuelAmount;
-    public String brand;
-    public String serialNumber;
-    public String color;
+    private int fuelConsumption;
+    private float fuelAmount;
+    private float maxFuelAmount;
+    private String brand;
+    private String serialNumber;
+    private String color;
+
+    //
+    // Car Funktions
+    //
+
+    public Car(int fc, float fa, float mfa, String b, String sn, String color)
+    {
+        this.fuelConsumption = fc;
+        this.fuelAmount =fa;
+        this.maxFuelAmount = mfa;
+        this.brand = b;
+        this.serialNumber = sn;
+        this.color = color;
+    }
 
     public void drive()
     {
@@ -40,6 +54,66 @@ public class Car
 
     public void getRemainingRange()
     {
+        System.out.println();
         System.out.println((this.fuelAmount/this.fuelConsumption)*100 + " km left");
+    }
+
+
+
+    //
+    //Setters
+    //
+
+    public void setMaxFuelAmount(float maxFuelAmount) {
+        this.maxFuelAmount = maxFuelAmount;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setFuelAmount(float fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public void setFuelConsumption(int fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    //
+    // Getter
+    //
+
+
+    public float getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public float getMaxFuelAmount() {
+        return maxFuelAmount;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
     }
 }
