@@ -1,30 +1,31 @@
 public class Car
 {
-    private int fuelConsumption;
-    private float fuelAmount;
-    private float maxFuelAmount;
     private String brand;
     private String serialNumber;
     private String color;
+    private Engine engine;
+    private Tank tank;
 
     //
     // Car Funktions
     //
 
-    public Car(int fc, float fa, float mfa, String b, String sn, String color)
+    public Car(Engine engine, Tank tank, String b, String sn, String color)
     {
-        this.fuelConsumption = fc;
-        this.fuelAmount =fa;
-        this.maxFuelAmount = mfa;
+        this.engine = engine;
+        this.tank = tank;
         this.brand = b;
         this.serialNumber = sn;
         this.color = color;
     }
 
-    public void drive()
+
+
+    public void drive(int speed)
     {
-        this.fuelAmount -= this.fuelConsumption;
+        this.tank.setFuel(this.tank.getFuel() - (this.engine.getFuelConsumption()/100)*speed);
         System.out.println("Driving");
+        System.out.println(this.tank.getFuel());
     }
 
     public void Break()
@@ -34,7 +35,7 @@ public class Car
 
     public void turboBoost()
     {
-        if(this.fuelAmount / this.maxFuelAmount >= 0.1)
+        if(this.tank.getFuel() / this.tank.getMaxFuel() >= 0.1)
         {
             System.out.println("SuperBoostMode");
         }
@@ -55,7 +56,7 @@ public class Car
     public void getRemainingRange()
     {
         System.out.println();
-        System.out.println((this.fuelAmount/this.fuelConsumption)*100 + " km left");
+        System.out.println((this.tank.getFuel()/this.engine.getFuelConsumption())*100 + " km left at full throttle");
     }
 
 
@@ -63,10 +64,6 @@ public class Car
     //
     //Setters
     //
-
-    public void setMaxFuelAmount(float maxFuelAmount) {
-        this.maxFuelAmount = maxFuelAmount;
-    }
 
     public void setBrand(String brand) {
         this.brand = brand;
@@ -76,34 +73,23 @@ public class Car
         this.color = color;
     }
 
-    public void setFuelAmount(float fuelAmount) {
-        this.fuelAmount = fuelAmount;
-    }
-
-    public void setFuelConsumption(int fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
-    }
-
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
+    }
+
+    public void setEngine(Engine engine)
+    {
+        this.engine = engine;
+    }
+
+    public void setTank(Tank tank)
+    {
+        this.tank = tank;
     }
 
     //
     // Getter
     //
-
-
-    public float getFuelAmount() {
-        return fuelAmount;
-    }
-
-    public float getMaxFuelAmount() {
-        return maxFuelAmount;
-    }
-
-    public int getFuelConsumption() {
-        return fuelConsumption;
-    }
 
     public String getBrand() {
         return brand;
@@ -115,5 +101,15 @@ public class Car
 
     public String getSerialNumber() {
         return serialNumber;
+    }
+
+    public Engine getEngine()
+    {
+        return engine;
+    }
+
+    public Tank getTank()
+    {
+        return tank;
     }
 }
