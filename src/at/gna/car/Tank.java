@@ -1,3 +1,5 @@
+package at.gna.car;
+
 public class Tank {
     private float maxFuel;
     private float fuel;

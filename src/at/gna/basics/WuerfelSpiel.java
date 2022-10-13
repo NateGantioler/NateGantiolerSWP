@@ -1,3 +1,5 @@
+package at.gna.basics;
+
 import com.sun.tools.javac.Main;
 
 import java.util.Random;

@@ -1,3 +1,8 @@
+package at.gna.car;
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class Car
 {
     private String brand;
@@ -5,9 +10,11 @@ public class Car
     private String color;
     private Engine engine;
     private Tank tank;
+    private List<RearMirror> mirrors;
+    private List<Tire> tires;
 
     //
-    // Car Funktions
+    // Car.Car Funktions
     //
 
     public Car(Engine engine, Tank tank, String b, String sn, String color)
@@ -17,9 +24,29 @@ public class Car
         this.brand = b;
         this.serialNumber = sn;
         this.color = color;
+        this.mirrors = new ArrayList<>();
+        this.tires = new ArrayList<>();
     }
 
+    public void addMirror(RearMirror rearMirror)
+    {
+        this.mirrors.add(rearMirror);
+    }
 
+    public List<RearMirror> getMirrors()
+    {
+        return mirrors;
+    }
+
+    public void addTire(Tire tire)
+    {
+        this.tires.add(tire);
+    }
+
+    public List<Tire> getTires()
+    {
+        return tires;
+    }
 
     public void drive(int speed)
     {

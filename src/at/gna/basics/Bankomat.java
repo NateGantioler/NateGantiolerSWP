@@ -1,3 +1,5 @@
+package at.gna.basics;
+
 import java.util.Scanner;
 
 public class Bankomat
