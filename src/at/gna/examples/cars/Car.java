@@ -22,7 +22,7 @@ public class Car
     }
 
     //
-    // Funktions
+    // Functions
     //
 
     public void driveCar(int km)

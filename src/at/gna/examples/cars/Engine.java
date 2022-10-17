@@ -2,7 +2,12 @@ package at.gna.examples.cars;
 
 public class Engine
 {
-    private String fuelType;
+    public enum TYPE
+    {
+        DIESEL,
+        GAS
+    }
+    private TYPE fuelType;
     private int performance;
     private double fuelConsumption;
     private int kmDriven;
@@ -11,7 +16,7 @@ public class Engine
     // Constructor
     //
 
-    public Engine(String fuelType, int performance, double fuelConsumption, int kmDriven)
+    public Engine(TYPE fuelType, int performance, double fuelConsumption, int kmDriven)
     {
         this.fuelType = fuelType;
         this.performance = performance;
@@ -24,12 +29,12 @@ public class Engine
     //
 
 
-    public String getFuelType()
+    public TYPE getFuelType()
     {
         return fuelType;
     }
 
-    public void setFuelType(String fuelType)
+    public void setFuelType(TYPE fuelType)
     {
         this.fuelType = fuelType;
     }
