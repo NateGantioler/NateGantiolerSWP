@@ -13,7 +13,9 @@ public class Main
         lamp1.addLight(l3);
 
         lamp1.turnOn(l1);
+        lamp1.turnOn(l2);
         lamp1.turnAllOn();
-        lamp1.getOverallPowerUsage();
+        System.out.println(lamp1.getOverallPowerUsage());
+        lamp1.printNamesOfLightElements();
     }
 }

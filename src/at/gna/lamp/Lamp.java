@@ -1,10 +1,16 @@
 package at.gna.lamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lamp
 {
     private List<Light> lights;
     private int powerUsed;
+
+    public Lamp()
+    {
+        this.lights = new ArrayList<>();
+    }
 
     public void addLight(Light light)
     {
@@ -21,24 +27,29 @@ public class Lamp
         {
             light.setOn(true);
             powerUsed += light.getPowerUsage();
+            System.out.println(light.getName() + " eingeschaltet");
         }
     }
 
     public void turnAllOn()
     {
-        for(int i = 0; i < lights.size(); i++)
+        for(int i = 0; i < this.lights.size(); i++)
         {
-            if(lights.get(i).isOn() != true)
-            {
-                lights.get(i).setOn(true);
-                powerUsed += lights.get(i).getPowerUsage();
-            }
+            turnOn(this.lights.get(i));
         }
     }
 
-    public void getOverallPowerUsage
+    public double getOverallPowerUsage()
     {
+        return this.powerUsed;
+    }
 
+    public void printNamesOfLightElements()
+    {
+        for(int i = 0; i < this.lights.size(); i++)
+        {
+            System.out.println(this.lights.get(i).getName());
+        }
     }
     //
     // Getter & Setter
