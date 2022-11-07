@@ -4,6 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        /*
         Engine e1 = new Engine(140, Engine.TYPE.DIESEL, 5);
         Tank t1 = new Tank(120, 30);
         Car c1 = new Car(e1, t1, "Audi", "1234", "Black");
@@ -23,6 +24,28 @@ public class Main
 
         System.out.println(c1.getMirrors().get(0).getPosition());
         System.out.println(c1.getTires().get(2).getRimColor());
+        */
+
+        Engine e1 = new Engine(140, Engine.TYPE.DIESEL, 5);
+        Tank ta1 = new Tank(120, 30);
+        Truck t1 = new Truck(e1, ta1, "Audi", "1234", "Black", "trailer1");
+        RearMirror r1 = new RearMirror(100, -10);
+        RearMirror r2 = new RearMirror(100, 10);
+        t1.addMirror(r1);
+        t1.addMirror(r2);
+
+        Tire ti1 = new Tire(50, "Silver");
+        Tire ti2 = new Tire(50, "Silver");
+        Tire ti3 = new Tire(50, "Rusty");
+        Tire ti4= new Tire(50, "Rusty");
+        t1.addTire(ti1);
+        t1.addTire(ti2);
+        t1.addTire(ti3);
+        t1.addTire(ti4);
+
+        System.out.println(t1.getTrailer());
+        System.out.println(t1.getBrand());
+        t1.drive(5);
 
         //
         // Car.Car Funktions
