@@ -9,6 +9,7 @@ public class Main
         SDcard sdCard = new SDcard(20000);
         Phone phone = new Phone("Black", sim, camera, sdCard);
 
+        phone.Login();
         phone.takePicture();
         phone.takePicture();
         phone.takePicture();

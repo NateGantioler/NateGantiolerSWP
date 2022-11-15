@@ -1,4 +1,5 @@
 package at.gna.phone;
+import java.util.Scanner;
 
 public class Phone
 {
@@ -24,9 +25,31 @@ public class Phone
     // Functions
     //
 
+    public void Login()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String username;
+        String password;
+
+        System.out.println("Username: ");
+        username = scanner.nextLine();
+        System.out.println("Passwort: ");
+        password = scanner.nextLine();
+
+        System.out.println("Willkommen " + username + "!");
+    }
+
     public void takePicture()
     {
-        sdCard.saveFile(camera.makePicture());
+        if(sdCard.getFreeSpace() > 0)
+        {
+            sdCard.saveFile(camera.makePicture());
+            System.out.println("Foto gemacht");
+        }
+        else
+        {
+            System.out.println("Kein Speicherplatz mehr");
+        }
     }
 
     public void makeCall(String number)
