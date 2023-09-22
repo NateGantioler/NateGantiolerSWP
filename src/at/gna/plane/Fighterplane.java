@@ -9,9 +9,9 @@ public class Fighterplane extends Airplane
 
     private List<WeaponSystem> weaponSystemList;
 
-    public Fighterplane(String color, float height, float width, float length, float weight, int seats, int windows, String military, float maxSpeed)
+    public Fighterplane(String color, float height, float width, float length, float weight, int seats, int windows, String military, float maxSpeed, Tank tank, Engine engine)
     {
-        super(color, height, width, length, weight, seats, windows, maxSpeed);
+        super(color, height, width, length, weight, seats, windows, maxSpeed, tank, engine);
         this.military = military;
     }
 

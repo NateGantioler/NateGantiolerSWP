@@ -10,9 +10,11 @@ public class Airplane
     protected int seats;
     protected int windows;
     protected float maxSpeed;
+    protected Engine engine;
+    protected Tank tank;
     private float currentSpeed;
 
-    public Airplane(String color, float height, float width, float length, float weight, int seats, int windows, float maxSpeed)
+    public Airplane(String color, float height, float width, float length, float weight, int seats, int windows, float maxSpeed, Tank tank, Engine engine)
     {
         this.color = color;
         this.height = height;
@@ -22,6 +24,8 @@ public class Airplane
         this.seats = seats;
         this.windows = windows;
         this.maxSpeed = maxSpeed;
+        this.tank = tank;
+        this.engine = engine;
     }
 
     public void Accelerate(float strength)
